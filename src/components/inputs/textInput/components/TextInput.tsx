@@ -29,7 +29,7 @@ type Props = {
 const defaultBackgroundColor = '#ffffff';
 const defaultTextColor = '#303235';
 // CDN link for default send sound
-const defaultSendSound = 'https://cdn.jsdelivr.net/gh/Ark6Rj/ChatEmbed@v0.0.1/src/assets/send_message.mp3';
+const defaultSendSound = 'https://cdn.jsdelivr.net/gh/Ark6Rj/ChatEmbed@latest/src/assets/send_message.mp3';
 
 export const TextInput = (props: Props) => {
   const [inputValue, setInputValue] = createSignal(props.defaultValue ?? '');
