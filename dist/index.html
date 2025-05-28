@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+                        <html lang="en">
+                          <head>
+                            <meta charset="UTF-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                            <title>Document</title>
+                          </head>
+                          <body>
+                          <div>444</div>
+                          <script type="module">
+       import Chatbot from './web.js';
+             Chatbot.init({
+    chatflowid: '91e9c803-5169-4db9-8207-3c0915d71c5f',
+    apiHost: 'http://localhost:3000',
+    theme: {
+      tooltip: {
+        showTooltip: true,
+        tooltipMessage: 'Hi There 👋!',
+        tooltipBackgroundColor: 'black',
+        tooltipTextColor: 'white',
+        tooltipFontSize: 16,
+      },
+      chatWindow: {
+      title: 'Bot',
+        textInput: {
+          enableMarkdown:true
+        },
+          userMessage: {
+          showAvatar: true,
+          avatarSrc: 'https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/usericon.png',
+        },
+          botMessage: {
+          showAvatar: true,
+          avatarSrc: 'https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/parroticon.png',
+        },
+      },
+    },
+  });
+                                </script>
+                          </body>
+                        </html>
