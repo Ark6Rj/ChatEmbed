@@ -62,7 +62,7 @@ const indexConfig = {
                             <title>Document</title>
                           </head>
                           <body>
-                          <div>444</div>
+                          <div></div>
                           <script type="module">
        import Chatbot from './web.js';
              Chatbot.init({
