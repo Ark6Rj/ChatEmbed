@@ -192,7 +192,7 @@ export const BotBubble = (props: Props) => {
         <Show when={props.showAvatar}>
           <Avatar initialAvatarSrc={props.avatarSrc} />
         </Show>
-        <div class="flex flex-col flex-1 content-wrapper group">
+        <div class="flex flex-col  content-wrapper group">
           <div class="flex flex-col justify-start flex-1">
             {props.showAgentMessages && props.message.agentReasoning && (
               <details ref={botDetailsEl} class="mb-2 px-4 py-2 ml-2 chatbot-host-bubble rounded-[6px]">

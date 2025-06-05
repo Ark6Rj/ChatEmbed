@@ -62,10 +62,10 @@ const indexConfig = {
                             <title>Document</title>
                           </head>
                           <body>
-                          <div></div>
+                          <n-fullchatbot></n-fullchatbot>
                           <script type="module">
        import Chatbot from './web.js';
-             Chatbot.init({
+             Chatbot.initFull({
     chatflowid: '91e9c803-5169-4db9-8207-3c0915d71c5f',
     apiHost: 'http://localhost:3000',
     theme: {
