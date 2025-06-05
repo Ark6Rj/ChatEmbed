@@ -52,7 +52,7 @@ export const Full = (props: FullProps, { element }: { element: HTMLElement }) =>
             'background-color': props.theme?.chatWindow?.backgroundColor || 'transparent',
             'background-image': props.theme?.chatWindow?.backgroundImage
               ? `url(${props.theme?.chatWindow?.backgroundImage})`
-              : 'url(https://cdn.jsdelivr.net/gh/Ark6Rj/ChatEmbed@latest/src/assets/bgc1.svg), url(https://cdn.jsdelivr.net/gh/Ark6Rj/ChatEmbed@latest/src/assets/bgc2.png), linear-gradient(173deg, #f4f9ff -24.94%, #edf1f9 103.15%)',
+              : 'url(https://cdn.jsdelivr.net/gh/Ark6Rj/ChatEmbed/src/assets/bgc1.svg), url(https://cdn.jsdelivr.net/gh/Ark6Rj/ChatEmbed/src/assets/bgc2.png), linear-gradient(173deg, #f4f9ff -24.94%, #edf1f9 103.15%)',
             'background-size': '100%',
             'background-position': '100% 0',
             'background-attachment': 'fixed',

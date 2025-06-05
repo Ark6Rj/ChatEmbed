@@ -29,7 +29,7 @@ type Props = {
 const defaultBackgroundColor = '#ffffff';
 const defaultTextColor = '#303235';
 // CDN link for default send sound
-const defaultSendSound = 'https://cdn.jsdelivr.net/gh/Ark6Rj/ChatEmbed@latest/src/assets/send_message.mp3';
+const defaultSendSound = 'https://cdn.jsdelivr.net/gh/Ark6Rj/ChatEmbed/src/assets/send_message.mp3';
 
 export const TextInput = (props: Props) => {
   const [inputValue, setInputValue] = createSignal(props.defaultValue ?? '');
@@ -116,7 +116,7 @@ export const TextInput = (props: Props) => {
             {warningMessage()}
           </div>
         </Show>
-        <div class="w-full flex items-end justify-between">
+        <div class="w-full flex items-center justify-between">
           {props.uploadsConfig?.isImageUploadAllowed ? (
             <>
               <ImageUploadButton

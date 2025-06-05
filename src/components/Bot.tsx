@@ -305,7 +305,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
   // Define the audioRef
   let audioRef: HTMLAudioElement | undefined;
   // CDN link for default receive sound
-  const defaultReceiveSound = 'https://cdn.jsdelivr.net/gh/Ark6Rj/ChatEmbed@latest/src/assets/receive_message.mp3';
+  const defaultReceiveSound = 'https://cdn.jsdelivr.net/gh/Ark6Rj/ChatEmbed/src/assets/receive_message.mp3';
   const playReceiveSound = () => {
     if (props.textInput?.receiveMessageSound) {
       let audioSrc = defaultReceiveSound;
