@@ -42,6 +42,7 @@ export const Full = (props: FullProps, { element }: { element: HTMLElement }) =>
       viewportMeta.setAttribute('content', 'width=device-width, initial-scale=1.0');
     }
   });
+  console.log(props, 'props');
   return (
     <>
       <style>{styles}</style>

@@ -55,7 +55,7 @@ export const Bubble = (props: BubbleProps) => {
   });
 
   const showTooltip = bubbleProps.theme?.tooltip?.showTooltip ?? false;
-
+  console.log(bubbleProps, 'bubbleProps');
   return (
     <>
       <style>{styles}</style>
