@@ -42,7 +42,6 @@ export const Full = (props: FullProps, { element }: { element: HTMLElement }) =>
       viewportMeta.setAttribute('content', 'width=device-width, initial-scale=1.0');
     }
   });
-
   return (
     <>
       <style>{styles}</style>
@@ -50,9 +49,11 @@ export const Full = (props: FullProps, { element }: { element: HTMLElement }) =>
         <div
           style={{
             'background-color': props.theme?.chatWindow?.backgroundColor || 'transparent',
-            'background-image': props.theme?.chatWindow?.backgroundImage
-              ? `url(${props.theme?.chatWindow?.backgroundImage})`
-              : 'url(https://cdn.jsdelivr.net/gh/Ark6Rj/ChatEmbed/src/assets/bgc1.svg), url(https://cdn.jsdelivr.net/gh/Ark6Rj/ChatEmbed/src/assets/bgc2.png), linear-gradient(173deg, #f4f9ff -24.94%, #edf1f9 103.15%)',
+            'background-image': props.theme?.chatWindow?.backgroundColor
+              ? 'none'
+              : props.theme?.chatWindow?.backgroundImage
+                ? `url(${props.theme?.chatWindow?.backgroundImage})`
+                : 'url(https://cdn.jsdelivr.net/gh/Ark6Rj/ChatEmbed/src/assets/bgc1.svg), url(https://cdn.jsdelivr.net/gh/Ark6Rj/ChatEmbed/src/assets/bgc2.png), linear-gradient(173deg, #f4f9ff -24.94%, #edf1f9 103.15%)',
             'background-size': '100%',
             'background-position': '100% 0',
             'background-attachment': 'fixed',
