@@ -1,4 +1,4 @@
-import { createSignal, Show, splitProps, onCleanup, createEffect } from 'solid-js';
+import { createSignal, Show, splitProps, onCleanup, createEffect, createMemo } from 'solid-js';
 import styles from '../../../assets/index.css';
 import { BubbleButton } from './BubbleButton';
 import { BubbleParams } from '../types';
@@ -55,6 +55,8 @@ export const Bubble = (props: BubbleProps) => {
   });
 
   const showTooltip = bubbleProps.theme?.tooltip?.showTooltip ?? false;
+
+  const regex = createMemo(() => /linear-gradient\(([^,]+),\s*([^,]+),\s*([^)]+)\)/);
   console.log(bubbleProps, 'bubbleProps');
   return (
     <>
@@ -88,10 +90,12 @@ export const Bubble = (props: BubbleProps) => {
           transform: isBotOpened() ? 'scale3d(1, 1, 1)' : 'scale3d(0, 0, 1)',
           'box-shadow': 'rgb(0 0 0 / 16%) 0px 5px 40px',
           'background-color': bubbleProps.theme?.chatWindow?.backgroundColor || '#ffffff',
-          'background-image': bubbleProps.theme?.chatWindow?.backgroundColor
+          'background-image': props.theme?.chatWindow?.backgroundColor
             ? 'none'
-            : bubbleProps.theme?.chatWindow?.backgroundImage
-              ? `url(${bubbleProps.theme?.chatWindow?.backgroundImage})`
+            : props.theme?.chatWindow?.backgroundImage
+              ? props.theme?.chatWindow?.backgroundImage.match(regex())
+                ? props.theme?.chatWindow?.backgroundImage
+                : `url(${props.theme?.chatWindow?.backgroundImage})`
               : 'url(https://cdn.jsdelivr.net/gh/Ark6Rj/ChatEmbed/src/assets/bgc1.svg), url(https://cdn.jsdelivr.net/gh/Ark6Rj/ChatEmbed/src/assets/bgc2.png), linear-gradient(173deg, #f4f9ff -24.94%, #edf1f9 103.15%)',
           'background-size': '100%',
           'background-position': '100% 0',

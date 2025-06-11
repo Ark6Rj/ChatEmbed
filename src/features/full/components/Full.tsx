@@ -1,7 +1,7 @@
 import styles from '../../../assets/index.css';
 import { Bot, BotProps } from '@/components/Bot';
 import { BubbleParams } from '@/features/bubble/types';
-import { createSignal, onCleanup, onMount, Show } from 'solid-js';
+import { createMemo, createSignal, onCleanup, onMount, Show } from 'solid-js';
 
 const defaultButtonColor = '#transparent';
 const defaultIconColor = 'black';
@@ -10,6 +10,8 @@ export type FullProps = BotProps & BubbleParams;
 
 export const Full = (props: FullProps, { element }: { element: HTMLElement }) => {
   const [isBotDisplayed, setIsBotDisplayed] = createSignal(false);
+
+  const regex = createMemo(() => /linear-gradient\(([^,]+),\s*([^,]+),\s*([^)]+)\)/);
 
   const launchBot = () => {
     setIsBotDisplayed(true);
@@ -53,7 +55,9 @@ export const Full = (props: FullProps, { element }: { element: HTMLElement }) =>
             'background-image': props.theme?.chatWindow?.backgroundColor
               ? 'none'
               : props.theme?.chatWindow?.backgroundImage
-                ? `url(${props.theme?.chatWindow?.backgroundImage})`
+                ? props.theme?.chatWindow?.backgroundImage.match(regex())
+                  ? props.theme?.chatWindow?.backgroundImage
+                  : `url(${props.theme?.chatWindow?.backgroundImage})`
                 : 'url(https://cdn.jsdelivr.net/gh/Ark6Rj/ChatEmbed/src/assets/bgc1.svg), url(https://cdn.jsdelivr.net/gh/Ark6Rj/ChatEmbed/src/assets/bgc2.png), linear-gradient(173deg, #f4f9ff -24.94%, #edf1f9 103.15%)',
             'background-size': '100%',
             'background-position': '100% 0',

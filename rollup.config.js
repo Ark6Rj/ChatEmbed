@@ -77,7 +77,6 @@ const indexConfig = {
         tooltipFontSize: 16,
       },
       chatWindow: {
-      backgroundColor:'red',
       title: 'Bot',
         textInput: {
           enableMarkdown:true
